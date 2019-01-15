@@ -4,12 +4,14 @@
 }
 
 body, html {
-    height: 100%;
-    margin: 0;
-  }
+  height: 100%;
+  margin: 0;
+}
+
   .bg {
+    top: 0px;
     /* The image used */
-    background-image: url("memory.jpg");
+    background-image: url("/img/bakground.jpg");
   
     /* Full height */
     height: 100%; 
@@ -25,15 +27,10 @@ body, html {
     color: white;
   }
 
-  .h1{
-  bottom: 8px;
-  left: 16px; 
-
-  }
-
 .titel{
-font-size: 50px;
+  margin: 0%;
+  padding-top: 2%;
+font-size: 4.5em;
 font-family: 'cow';
-bottom: 10px;
-position: center;
+text-align: center;
 }
