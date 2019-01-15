@@ -2,30 +2,45 @@
     font-family: 'cow';
     src: url(happycow.ttf)
 }
+.grid-container {
+  margin: 0 auto;
+  width: 70%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 20% 20% 20% 20%; 
+  grid-gap: 10px;
+}
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.726);
+ padding: 5% 5% 5% 5%;
+
+}
+
+img{
+  width: 100%;
+}
 
 body, html {
   height: 100%;
-  margin: 0;
-}
+  margin: 0 auto;
+  max-width: 800px;
+  min-width: 500px;
 
-  .bg {
-    top: 0px;
-    /* The image used */
-    background-image: url("/img/bakground.jpg");
-  
-    /* Full height */
-    height: 100%; 
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .container {
-    position: relative;
-    text-align: center;
-    color: white;
-  }
+}
+.card {
+  margin: 0 auto;
+  left: 10%;
+}
+.bg {
+ 
+  width: 100%;
+  top: 0px;
+  background-image: url("/img/bakground.jpg");
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .titel{
   margin: 0%;
@@ -33,4 +48,5 @@ body, html {
 font-size: 4.5em;
 font-family: 'cow';
 text-align: center;
+color: #fff;
 }
