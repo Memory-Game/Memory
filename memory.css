@@ -1,39 +1,52 @@
 @font-face{
-    font-family: 'cow';
-    src: url(happycow.ttf)
+  font-family: 'cow';
+  src: url(happycow.ttf)
+}
+.grid-container {
+margin: 0 auto;
+width: 70%;
+display: grid;
+justify-content: center;
+grid-template-columns: 20% 20% 20% 20%; 
+grid-gap: 10px;
+}
+.grid-container > div {
+background-color: rgba(255, 255, 255, 0.726);
+padding: 5% 5% 5% 5%;
+
+}
+
+img{
+width: 100%;
 }
 
 body, html {
-    height: 100%;
-    margin: 0;
-  }
-  .bg {
-    /* The image used */
-    background-image: url("memory.jpg");
-  
-    /* Full height */
-    height: 100%; 
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .container {
-    position: relative;
-    text-align: center;
-    color: white;
-  }
+height: 100%;
+margin: 0 auto;
+max-width: 800px;
+min-width: 500px;
 
-  .h1{
-  bottom: 8px;
-  left: 16px; 
+}
+.card {
+margin: 0 auto;
+left: 10%;
+}
 
-  }
+.bg {
+width: 100%;
+top: 0px;
+background-image: url("/img/bakground.jpg");
+height: 100%; 
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
 
 .titel{
-font-size: 50px;
+margin: 0%;
+padding-top: 2%;
+font-size: 4.5em;
 font-family: 'cow';
-bottom: 10px;
-position: center;
+text-align: center;
+color: #fff;
 }
