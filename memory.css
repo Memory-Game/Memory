@@ -25,15 +25,12 @@ body, html {
     color: white;
   }
 
-  .h1{
-  bottom: 8px;
-  left: 16px; 
-
-  }
-
+  
 .titel{
-font-size: 50px;
+font-size: 70px;
 font-family: 'cow';
-bottom: 10px;
-position: center;
+color: black;
+text-align: center;
+margin: 0;
+padding: 1%;
 }
