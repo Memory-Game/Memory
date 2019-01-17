@@ -18,6 +18,7 @@ padding: 5% 5% 5% 5%;
 
 img{
 width: 100%;
+
 }
 
 body, html {
@@ -33,7 +34,6 @@ left: 10%;
 }
 
 .bg {
-<<<<<<< HEAD
 width: 100%;
 top: 0px;
 background-image: url("/img/bakground.jpg");
@@ -41,7 +41,6 @@ height: 100%;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-=======
  
   width: 100%;
   top: 0px;
@@ -50,7 +49,6 @@ background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
->>>>>>> 9dff7507bbf1aaca39e1c15e30c4a35d5c260146
 }
 
 .titel{
@@ -60,4 +58,8 @@ font-size: 4.5em;
 font-family: 'cow';
 text-align: center;
 color: #fff;
+}
+
+.front-face{
+  display: none;
 }
