@@ -50,3 +50,7 @@ font-family: 'cow';
 text-align: center;
 color: #fff;
 }
+
+.back-face{
+  display: none;
+}

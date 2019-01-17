@@ -52,6 +52,7 @@ else if (numClick == 1)
  numClick = 2;
  second = card;
  document.images[cards].src = cards[card];
+ //waits 0,8 sec befor flipp
  timer = setInterval(control, 800);
 }
 else
@@ -59,7 +60,7 @@ else
     alert('You can only click on one'); // 2 images will be shown until flipped
     }
 }
-
+ // here we check if they match
 function control()
 {
     clearInterval(timer);
@@ -72,4 +73,13 @@ if(match == 6)
     alert('You have match all the images');
     location.reload();
    }
-};
+}
+else
+{
+    document.images[first]. src="./img/gris.png";
+    document.images[second]. src="./img/gris.png";
+    return;
+   }
+
+}
+}
