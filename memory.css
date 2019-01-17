@@ -18,7 +18,6 @@ padding: 5% 5% 5% 5%;
 
 img{
 width: 100%;
-
 }
 
 body, html {
@@ -32,23 +31,15 @@ min-width: 500px;
 margin: 0 auto;
 left: 10%;
 }
-
 .bg {
+
 width: 100%;
 top: 0px;
-background-image: url("/img/bakground.jpg");
+background-image: url("./img/bakground.jpg");
 height: 100%; 
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
- 
-  width: 100%;
-  top: 0px;
-  background-image: url("./img/bakground.jpg");
-  height: 100%; 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .titel{
@@ -58,8 +49,4 @@ font-size: 4.5em;
 font-family: 'cow';
 text-align: center;
 color: #fff;
-}
-
-.front-face{
-  display: none;
 }
