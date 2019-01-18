@@ -42,7 +42,7 @@ var cards = [
         id: 'B'
     },
     {
-        img: 'img/kalkon',
+        img: 'img/kalkon.png',
         id: 'C'
     },
     {
@@ -60,16 +60,6 @@ var cards = [
 ];                   
 
 
-
-
-// shuffel cards
-/*
-var card = document.querySelector('.card');
-card.addEventListener( 'click', function() {
-  card.classList.toggle('is-flipped');
-});
-
-*/
 var container = document.getElementById('container');
 var cardContainer = document.createElement('section');
 container.appendChild(cardContainer);
