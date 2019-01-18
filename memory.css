@@ -3,6 +3,19 @@
   margin: 0;
   box-sizing: border-box;
 }
+@font-face{
+  font-family: 'cow';
+  src: url(happycow.ttf)
+}
+.bg {
+  width: 100%;
+  top: 0px;
+  background-image: url("./img/bakground.jpg");
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
 body {
   height: 100vh;
   display: flex;
@@ -10,9 +23,10 @@ body {
 }
 
 .memory-game {
-  width: 640px;
-  height: 640px;
-  margin: auto;
+ 
+  width: 540px;
+  height: 540px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
 }
@@ -50,4 +64,12 @@ body {
 
 .front-face {
   transform: rotateY(180deg);
+}
+.titel{
+  margin: 0 auto;
+  padding-top: 10%;
+  font-size: 5em;
+  font-family: 'cow';
+  text-align: center;
+  color: #fff;
 }
