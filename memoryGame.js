@@ -1,15 +1,24 @@
 const cards = document.querySelectorAll('.memory-card');
+const counter = document.querySelector(".move");
+
 
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+let move = 0;
+
+function moves(){
+    move++;
+    counter.innerHTML = move;
+}
+
 
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
 
   this.classList.add('flip');
-
+  moves();
   if (!hasFlippedCard) {
     // first click
     hasFlippedCard = true;
@@ -45,7 +54,7 @@ function unflipCards() {
     secondCard.classList.remove('flip');
 
     resetBoard();
-  }, 1500);
+  }, 1000);
 }
 
 function resetBoard() {
