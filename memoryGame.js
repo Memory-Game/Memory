@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll('.memory-card');
+const cards = document.querySelectorAll('.memoryCard');
 const counter = document.querySelector(".move");
 const hover = document.querySelector(".hoverGameOff");
 
@@ -81,9 +81,14 @@ function resetBoard() {
   });
 })();
 
+
 cards.forEach(card => card.addEventListener('click', flipCard));
 }
+/*
+function done(){
+    if (classList('flip') == 12){
+        hover.classList.toggle('hoverGameOff');
+    }}; */
 
-
-document.getElementById("replay").addEventListener("click", start)
+document.getElementById("replay").addEventListener("click", start);
  
