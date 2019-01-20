@@ -1,5 +1,6 @@
 const cards = document.querySelectorAll('.memory-card');
 const counter = document.querySelector(".move");
+const hover = document.querySelector(".hoverGameOff");
 
 var hasFlippedCard = false;
 var lockBoard = false;
@@ -16,7 +17,7 @@ function start(){
     secondCard = null;
     firstCard = null;
     lockBoard = false;
-  
+  hover.classList.toggle('gameOn');
 function moves(){
     move++;
     counter.innerHTML = move;
@@ -85,19 +86,4 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
 
 document.getElementById("replay").addEventListener("click", start)
-    /*
-    cards.forEach(kort => {
-        kort.classList.remove("flip");
-    });
-    cards.forEach(card => {
-        let randomPos = Math.floor(Math.random() * 12);
-        card.style.order = randomPos;
-    });
-    counter.innerHTML = move = 0;
-    hasFlippedCard = false;
-    secondCard = null;
-    firstCard = null;
-    lockBoard = false;
-  });
-
-*/
+ 

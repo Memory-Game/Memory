@@ -11,15 +11,18 @@
     <link rel="stylesheet" href="./memory.css">
 </head>
 <body class="bg">
-    <div class="z">
-        <button id="replay">Spela</button>
-    </div>
-    <section class="memory-game">
+    <div class="center">
+    <div>
+        <h1 class="titel">MEMORY</h1>
+        <span class="supTxt">MOVES: </span> <span class="move"> 0</span> 
+   
+
+ <section class="memory-game">
+        <div class="hoverGameOff" >
+                <button id="replay">Spela</button>
+            </div>
         <div>
 
-            <h1 class="titel">MEMORY</h1>
-            <span class="supTxt">MOVES: </span> <span class="move"> 0</span> 
-            
         </div>
         <div class="memory-card" data-framework="gris">
           <img class="front-face" src="/img/gris.png" alt="Gris">
@@ -83,6 +86,8 @@
               </div>
       
             </section>
+        </div>
+        </div>
     <script src="./memoryGame.js"></script>
 </body>
 </html>
