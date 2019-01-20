@@ -6,6 +6,7 @@ var hasFlippedCard = false;
 var lockBoard = false;
 var firstCard, secondCard;
 var move = 0;
+var points = 0;
 
 // starta/ starta om 0-ställer   
 function start(){
@@ -52,7 +53,14 @@ function checkForMatch() {
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
+points++;
 
+// kollar om omgången är klar, startar om (ska ersättas med nåt som visar hur det gick, och val om att starta om)
+if (points == 6){
+    setTimeout(() => {
+    start();
+}, 1000);
+}
   resetBoard();
 }
 
