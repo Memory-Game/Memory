@@ -7,7 +7,7 @@ var lockBoard = false;
 var firstCard, secondCard;
 var move = 0;
 
-  
+// starta/ starta om 0-ställer   
 function start(){
     cards.forEach(kort => {
         kort.classList.remove("flip");
@@ -18,11 +18,13 @@ function start(){
     firstCard = null;
     lockBoard = false;
   hover.classList.toggle('gameOn');
+
+  // räknar antal klick
 function moves(){
     move++;
     counter.innerHTML = move;
 }
-
+// lägger till css-flip vid klick
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
@@ -30,19 +32,17 @@ function flipCard() {
   this.classList.add('flip');
   moves();
   if (!hasFlippedCard) {
-    // first click
     hasFlippedCard = true;
     firstCard = this;
 
     return;
   }
 
-  // second click
   secondCard = this;
 
   checkForMatch();
 }
-
+// kollar om dataset matchar, gör dom de tas klick bort från korten med flip aktiv, är det inte match, tas flip bort med 1 sekunds fördröjning. 
 function checkForMatch() {
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
@@ -73,6 +73,7 @@ function resetBoard() {
   
 }
 
+// blandar kortens ordning med Math.random, "()" runt funktionen gör att funktionen körs direkt.
 
 (function shuffle() {
   cards.forEach(card => {
@@ -81,14 +82,21 @@ function resetBoard() {
   });
 })();
 
+// klick funktion på korten
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 }
+
+
 /*
+// försök till att se om spelet är klart, fungerar ej nu!
+
 function done(){
     if (classList('flip') == 12){
         hover.classList.toggle('hoverGameOff');
     }}; */
 
+
+// startar spelet vid klick på start-knappen
 document.getElementById("replay").addEventListener("click", start);
  

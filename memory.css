@@ -83,6 +83,7 @@ body {
   border-radius: 15px;
   background: #1C7CCC;
   backface-visibility: hidden;
+  /* för att det ska fungera i safari behövs denna rad */
   -webkit-backface-visibility: hidden;
 
 }
