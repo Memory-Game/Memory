@@ -1,17 +1,26 @@
 const cards = document.querySelectorAll('.memory-card');
 const counter = document.querySelector(".move");
 
+var hasFlippedCard = false;
+var lockBoard = false;
+var firstCard, secondCard;
+var move = 0;
 
-let hasFlippedCard = false;
-let lockBoard = false;
-let firstCard, secondCard;
-let move = 0;
-
+  
+function start(){
+    cards.forEach(kort => {
+        kort.classList.remove("flip");
+    });
+    counter.innerHTML = move = 0;
+    hasFlippedCard = false;
+    secondCard = null;
+    firstCard = null;
+    lockBoard = false;
+  
 function moves(){
     move++;
     counter.innerHTML = move;
 }
-
 
 function flipCard() {
   if (lockBoard) return;
@@ -60,7 +69,9 @@ function unflipCards() {
 function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
+  
 }
+
 
 (function shuffle() {
   cards.forEach(card => {
@@ -70,3 +81,23 @@ function resetBoard() {
 })();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
+}
+
+
+document.getElementById("replay").addEventListener("click", start)
+    /*
+    cards.forEach(kort => {
+        kort.classList.remove("flip");
+    });
+    cards.forEach(card => {
+        let randomPos = Math.floor(Math.random() * 12);
+        card.style.order = randomPos;
+    });
+    counter.innerHTML = move = 0;
+    hasFlippedCard = false;
+    secondCard = null;
+    firstCard = null;
+    lockBoard = false;
+  });
+
+*/

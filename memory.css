@@ -19,11 +19,14 @@
 body {
   height: 100vh;
   display: flex;
-  background: #060AB2;
+  background: rgb(14, 150, 59);
 }
-
+.move {
+  font-family: 'cow';
+  font-size: 1.5em;
+}
 .memory-game {
- 
+ z-index: 1;
   width: 540px;
   height: 540px;
   margin: 0 auto;
@@ -57,7 +60,7 @@ body {
   height: 100%;
   padding: 20px;
   position: absolute;
-  border-radius: 5px;
+  border-radius: 15px;
   background: #1C7CCC;
   backface-visibility: hidden;
 }
@@ -72,4 +75,22 @@ body {
   font-family: 'cow';
   text-align: center;
   color: #fff;
+}
+.supTxt {
+  margin: 0 auto;
+  padding-top: 10%;
+  font-size: 1.5em;
+  font-family: 'cow';
+  text-align: center;
+  color: #fff;
+}
+#replay {
+
+}
+.z{
+  width: 540px;
+  height: 540px;
+  border-radius: 15px;
+background-color: rgba(204, 204, 204, 0.693);
+z-index: 1001;
 }
