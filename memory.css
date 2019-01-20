@@ -83,6 +83,8 @@ body {
   border-radius: 15px;
   background: #1C7CCC;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
 }
 
 .front-face {
