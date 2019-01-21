@@ -13,50 +13,62 @@ var match = 0;
 var cards = [
     {
         img: 'img/gris.png',
+        img: 'img/back_side.png',
         id: 'A'
     },
     {
         img: 'img/hast.png',
+        img: 'img/back_side.png',
         id: 'B'
     },
     {
         img: 'img/kalkon.png',
+        img: 'img/back_side.png',
         id: 'C'
     },
     {
         img: 'img/ko.png',
+        img: 'img/back_side.png',
         id: 'D'
     },
     {
         img: 'img/lamm.png',
+        img: 'img/back_side.png',
         id: 'E'
     },
     {
         img: 'img/tupp.png',
+        img: 'img/back_side.png',
         id: 'F'
     },
     {
         img: 'img/gris.png',
+        img: 'img/back_side.png',
         id: 'A'
     },
     {
         img: 'img/hast.png',
+        img: 'img/back_side.png',
         id: 'B'
     },
     {
         img: 'img/kalkon.png',
+        img: 'img/back_side.png',
         id: 'C'
     },
     {
         img: 'img/ko.png',
+        img: 'img/back_side.png',
         id: 'D'
     },
     {
         img: 'img/lamm.png',
+        img: 'img/back_side.png',
         id: 'E'
     },
     {
         img: 'img/tupp.png',
+        img: 'img/back_side.png',
         id: 'F'
     }
 ];         
@@ -70,6 +82,7 @@ function shuffle(a) {
     }
     return a;
 }
+
 shuffle(cards);
 
 var container = document.getElementById('container');
@@ -79,8 +92,20 @@ container.appendChild(cardContainer);
 
 cards.forEach(obj => {
     var cardImg = document.createElement('img');
+    cardImg.classList.add('card');
     cardImg.id = obj.id;
     cardImg.src = obj.img;
     cardContainer.appendChild(cardImg);
+    cardContainer.addEventListener('click', flipCard);
 });
+
+
+const memoryCards = document.getElementsByClassName('card');
+console.log(memoryCards);
+
+
+function flipCard(e) {
+    console.log('i was clicked');
+    e.target.classList.toggle('flipCard');
+}
 

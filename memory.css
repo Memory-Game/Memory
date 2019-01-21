@@ -5,7 +5,8 @@
 
 
 body, html {
-height: 100%;
+  width: 100%;
+height: auto;
 margin: 0 auto;
 max-width: 800px;
 min-width: 500px;
@@ -17,8 +18,9 @@ img {
   height: 150px;
   width: 150px;
   margin: 20px;
+  transform: scale(1);
 }
-.card {
+.memory-card {
   display: flex;
   width: 100%;
   height: auto;
@@ -51,3 +53,18 @@ text-align: center;
 color: #fff;
 }
 
+
+img:active{
+  transform: scale(.95);
+  transition: transforma .5s;
+}
+
+
+.card {
+  background-color: black;
+}
+
+
+.flipCard {
+  transform: rotateY(180deg);
+}
