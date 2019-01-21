@@ -7,7 +7,13 @@ var lockBoard = false;
 var firstCard, secondCard;
 var move = 0;
 var points = 0;
+var content;
 
+//--------------
+
+
+
+//--------------
 // starta/ starta om 0-ställer   
 function start(){
     cards.forEach(kort => {
@@ -96,7 +102,7 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 }
 
 
-/*
+
 
 // startar spelet vid klick på start-knappen
 document.getElementById("replay").addEventListener("click", start);
