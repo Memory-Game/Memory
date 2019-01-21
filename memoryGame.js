@@ -97,13 +97,6 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
 
 /*
-// försök till att se om spelet är klart, fungerar ej nu!
-
-function done(){
-    if (classList('flip') == 12){
-        hover.classList.toggle('hoverGameOff');
-    }}; */
-
 
 // startar spelet vid klick på start-knappen
 document.getElementById("replay").addEventListener("click", start);
