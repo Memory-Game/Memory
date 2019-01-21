@@ -53,7 +53,7 @@ function checkForMatch() {
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
-points++;
+  points++;
 
 // kollar om omgången är klar, startar om (ska ersättas med nåt som visar hur det gick, och val om att starta om)
 if (points == 6){
@@ -63,7 +63,7 @@ if (points == 6){
 }
   resetBoard();
 }
-
+// om ej match, tar bort css klass flip. så korten vänds tillbaka.
 function unflipCards() {
   lockBoard = true;
 
@@ -74,7 +74,7 @@ function unflipCards() {
     resetBoard();
   }, 1000);
 }
-
+// 0-ställer
 function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
