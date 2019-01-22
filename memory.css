@@ -57,7 +57,6 @@ body {
   height: calc(33.333% - 10px);
   margin: 5px;
   position: relative;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
   transform: scale(1);
   perspective: 1000px;
   transform-style: preserve-3d;
@@ -78,10 +77,10 @@ body {
 .back-face {
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 5px;
   position: absolute;
   border-radius: 15px;
-  background: #1C7CCC;
+  background: rgb(243, 78, 78);
   backface-visibility: hidden;
   /* för att det ska fungera i safari behövs denna rad */
   -webkit-backface-visibility: hidden;
