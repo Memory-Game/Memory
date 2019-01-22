@@ -93,6 +93,7 @@ img: 'tupp'
         
         `;
         content.classList.add('memoryCard');
+        content.id = playCards.id;
         play.appendChild(content);
     })
 //};

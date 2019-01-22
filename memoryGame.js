@@ -11,11 +11,11 @@ var lockBoard = false;
 var firstCard, secondCard;
 var move = 0;
 var points = 0;
-//-----
+/*
 
     
 const play = document.querySelector(".memory-game");
-var i;
+
 
 var playCards = [
     {
@@ -82,7 +82,7 @@ playCards.forEach( function (playCards){
 })
 
 
-//-----
+*/
 
 // starta/ starta om 0-ställer   
 function start(){
@@ -100,24 +100,23 @@ function start(){
 function moves(){
     move++;
     counter.innerHTML = move;
-}
-// lägger till css-flip vid klick
-function flipCard() {
-  if (lockBoard) return;
-  if (this === firstCard) return;
-
-  this.classList.add('flip');
-  moves();
-  if (!hasFlippedCard) {
-    hasFlippedCard = true;
-    firstCard = this;
-
-    return;
   }
-
-  secondCard = this;
-
-  checkForMatch();
+  // lägger till css-flip vid klick
+  function flipCard() {
+    if (lockBoard) return;
+    if (this === firstCard) return;
+    
+    this.classList.add('flip');
+    moves();
+    if (!hasFlippedCard) {
+      hasFlippedCard = true;
+      firstCard = this;
+      return;
+    }
+    
+    console.log(firstCard);
+    secondCard = this;
+    checkForMatch();
 }
 // kollar om dataset matchar, gör dom de tas klick bort från korten med flip aktiv, är det inte match, tas flip bort med 1 sekunds fördröjning. 
 function checkForMatch() {
