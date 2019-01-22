@@ -25,7 +25,7 @@ body {
   display: flex;
   background: rgb(14, 150, 59);
 }
-.move {
+.move .points{
   font-family: 'cow';
   font-size: 1.5em;
 }
@@ -77,17 +77,21 @@ body {
 .back-face {
   width: 100%;
   height: 100%;
-  padding: 5px;
   position: absolute;
   border-radius: 15px;
-  background: rgb(243, 78, 78);
+  background:#fff;
   backface-visibility: hidden;
   /* för att det ska fungera i safari behövs denna rad */
   -webkit-backface-visibility: hidden;
-
+}
+.back-face{
+  border: 1px solid rgb(0, 0, 0);
+  
 }
 .front-face {
   transform: rotateY(180deg);
+  box-shadow: 0px 0px 20px 7px peachpuff;
+  border: 1px solid peachpuff;
 }
 .titel{
   margin: 0 auto;
@@ -97,13 +101,21 @@ body {
   text-align: center;
   color: #fff;
 }
-.supTxt {
-    margin: 0 auto;
+.supTxtL {
+  float: left;
   padding-top: 10%;
   font-size: 1.5em;
   font-family: 'cow';
   text-align: center;
   color: #fff;
+}
+.supTxtH {
+ float:right;
+padding-top: 10%;
+font-size: 1.5em;
+font-family: 'cow';
+text-align: center;
+color: #fff;
 }
  #replay {
    width: 100%;

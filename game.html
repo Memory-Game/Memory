@@ -11,13 +11,18 @@
         <link rel="stylesheet" href="./memory.css">
     </head>
     <body class="bg">
-        <div class="center">
-            <div>
-                <h1 class="titel">MEMORY</h1>
-                <span class="supTxt">MOVES: </span> <span class="move"> 0</span> 
-                <section class="memory-game">
-               <script src="./cards.js"></script> 
-
+            <div class="center">
+                    <div>
+                        <h1 class="titel">MEMORY</h1>
+                        <span class="supTxtL">MOVES:  <span class="move"> 0</span> </span>
+                        <span id="timer">
+                        <progress value="0" max="30" id="progressBar"></progress>
+                        <button id="start-btn">Start</button>
+                        <button id="stop-btn">Stop</button>
+                        </span>
+                        <span class="supTxtH">POINTS:<span class="points"> 0</span>  </span> 
+                        <section class="memory-game">
+                        <script src="./cards.js"></script> 
     
         <div class="hoverGameOff" >
                 <button id="replay">Spela</button> 

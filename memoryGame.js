@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function (){
 
 const cards = document.querySelectorAll('.memoryCard');
 const counter = document.querySelector(".move");
+const pointer = document.querySelector(".points");
 const hover = document.querySelector(".hoverGameOff");
 
 var hasFlippedCard = false;
@@ -11,78 +12,7 @@ var lockBoard = false;
 var firstCard, secondCard;
 var move = 0;
 var points = 0;
-/*
 
-    
-const play = document.querySelector(".memory-game");
-
-
-var playCards = [
-    {
-        id: 1,
-    img: 'ko'
-} ,
-{
-    id: 2,
-    img: 'hast'
-} ,
-{
-    id: 3,
-    img: 'gris'
-} ,
-{
-    id: 4,
-    img: 'lamm'
-} ,
-{
-    id: 5,
-    img: 'kalkon'
-} ,
-{
-    id: 6,
-    img: 'tupp'
-} ,
-{
-    id: 1,
-img: 'ko'
-} ,
-{
-id: 2,
-img: 'hast'
-} ,
-{
-id: 3,
-img: 'gris'
-} ,
-{
-id: 4,
-img: 'lamm'
-} ,
-{
-id: 5,
-img: 'kalkon'
-} ,
-{
-id: 6,
-img: 'tupp'
-} 
-]
-
-
-playCards.forEach( function (playCards){
-  let content= document.createElement('div');
-   content.innerHTML = ` 
-
-  <img class="front-face" src="./img/${playCards.img}.png" id='${playCards.id}' alt="${playCards.img}">
-  <img class="back-face" src="./img/back_side.png" alt="Memory Card">
-  
-  `;
-  content.classList.add('memoryCard');
-  play.appendChild(content);
-})
-
-
-*/
 
 // starta/ starta om 0-ställer   
 function start(){
@@ -113,8 +43,7 @@ function moves(){
       firstCard = this;
       return;
     }
-    
-    console.log(firstCard);
+
     secondCard = this;
     checkForMatch();
 }
@@ -129,7 +58,7 @@ function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
   points++;
-
+  pointer.innerHTML = points;
 // kollar om omgången är klar, startar om (ska ersättas med nåt som visar hur det gick, och val om att starta om)
 if (points == 6){
     setTimeout(() => {
