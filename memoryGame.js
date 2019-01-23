@@ -12,6 +12,7 @@ var lockBoard = false;
 var firstCard, secondCard;
 var move = 0;
 var points = 0;
+var timeleft;
 
 
 // starta/ starta om 0-ställer   
@@ -26,6 +27,7 @@ function start(){
     secondCard = null;
     firstCard = null;
     lockBoard = false;
+    timeleft = 30;
   hover.classList.toggle('gameOn');
 
   // räknar antal klick
@@ -64,7 +66,6 @@ function disableCards() {
   points++;
   pointer.innerHTML = points;
 
- 
 
         firstCard.classList.add('match');
         secondCard.classList.add('match');
@@ -113,4 +114,23 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
 // startar spelet vid klick på start-knappen
 document.getElementById("replay").addEventListener("click", start);
+// timer
+
+
+document.getElementById('replay').addEventListener('click', lejlaTimer);
+
+let downloadTimer = 0;
+let intervalId = '';
+
+function lejlaTimer () {
+  intervalId = setInterval(function(){
+    document.getElementById("progressBar").value = 30 - --timeleft;
+    if (timeleft == 0){
+      console.log('timuot');
+      clearInterval(downloadTimer);
+      start();
+      clearInterval(intervalId);
+    } 
+  },1000);
+}
 });

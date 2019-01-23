@@ -27,12 +27,11 @@ body {
 }
 .move .points{
   font-family: 'cow';
-  font-size: 1.5em;
 }
 .memory-game {
   z-index: 1;
-  width: 540px;
-  height: 540px;
+  width: 485px;
+  height: 485px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -42,8 +41,8 @@ body {
   margin: 0 auto;
 }
 .hoverGameOff{
-  width: 540px;
-  height: 540px;
+  width: 485px;
+  height: 485px;
   border-radius: 15px;
   background-color: rgba(204, 204, 204, 0.693);
   z-index: 1001;
@@ -96,27 +95,33 @@ body {
 }
 .titel{
   margin: 0 auto;
-  padding-top: 10%;
-  font-size: 5em;
+  padding-top: 2%;
+  font-size: 3em;
   font-family: 'cow';
   text-align: center;
   color: #fff;
 }
 .supTxtL {
   float: left;
-  padding-top: 10%;
-  font-size: 1.5em;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  font-size: 1.3em;
   font-family: 'cow';
   text-align: center;
   color: #fff;
 }
 .supTxtH {
  float:right;
-padding-top: 10%;
-font-size: 1.5em;
+padding-top: 0.5%;
+padding-bottom: 0.5%;
+font-size: 1.3em;
 font-family: 'cow';
 text-align: center;
 color: #fff;
+}
+#timer {
+  margin-left: 10%;
+  margin-right: 10%;
 }
  #replay {
    width: 100%;
@@ -136,10 +141,9 @@ color: #fff;
   list-style: none;
 
 }
-
 .win {
   transform: rotateY(180deg);
-  box-shadow: 0px 0px 20px 7px peachpuff;
+  box-shadow: 0px 0px 15px 7px peachpuff;
   border: 1px solid peachpuff;
   width: 100%;
   height: 100%;
