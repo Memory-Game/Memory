@@ -18,8 +18,10 @@ var points = 0;
 function start(){
     cards.forEach(kort => {
         kort.classList.remove("flip");
+        kort.classList.remove("match");
     });
     counter.innerHTML = move = 0;
+    pointer.innerHTML = points = 0;
     hasFlippedCard = false;
     secondCard = null;
     firstCard = null;
@@ -55,15 +57,21 @@ function checkForMatch() {
 }
 
 function disableCards() {
+
+  
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
   points++;
   pointer.innerHTML = points;
+
+  
+        firstCard.classList.add('match');
+        secondCard.classList.add('match');
 // kollar om omgången är klar, startar om (ska ersättas med nåt som visar hur det gick, och val om att starta om)
 if (points == 6){
     setTimeout(() => {
     start();
-}, 1000);
+}, 2000);
 }
   resetBoard();
 }

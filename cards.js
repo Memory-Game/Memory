@@ -90,7 +90,7 @@ img: 'tupp'
 
         <img class="front-face" src="./img/${playCards.img}.png" id='${playCards.id}' alt="${playCards.img}">
         <img class="back-face" src="./img/back_side.png" alt="Memory Card">
-        
+        <img class="win" src="./img/${playCards.img}.png">
         `;
         content.classList.add('memoryCard');
         content.id = playCards.id;
