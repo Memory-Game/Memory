@@ -64,14 +64,15 @@ function disableCards() {
   points++;
   pointer.innerHTML = points;
 
-  
+ 
+
         firstCard.classList.add('match');
         secondCard.classList.add('match');
 // kollar om omgången är klar, startar om (ska ersättas med nåt som visar hur det gick, och val om att starta om)
 if (points == 6){
     setTimeout(() => {
     start();
-}, 2000);
+}, 2500);
 }
   resetBoard();
 }
