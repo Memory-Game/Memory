@@ -30,8 +30,12 @@ function start(){
     lockBoard = false;
     timeleft = 30;
   hover.classList.toggle('gameOn');
-  // räknar antal klick
+  }
+  // räknar antal klick och sätter igång timern vid första vändning
   function moves(){
+    if (timeleft == 30){
+      lejlaTimer();
+    }
     move++;
     counter.innerHTML = move;
   }
@@ -55,10 +59,10 @@ function start(){
 function checkForMatch() {
   let isMatch = firstCard.id === secondCard.id;
 
-  isMatch ? disableCards() : unflipCards();
+  isMatch ? ifMatch() : notMatch();
 }
 
-function disableCards() {
+function ifMatch() {
 
   
   firstCard.removeEventListener('click', flipCard);
@@ -78,7 +82,7 @@ if (points == 6){
   resetBoard();
 }
 // om ej match, tar bort css klass flip. så korten vänds tillbaka.
-function unflipCards() {
+function notMatch() {
   lockBoard = true;
 
   setTimeout(() => {
@@ -107,7 +111,7 @@ function resetBoard() {
 // klick funktion på korten
 
 cards.forEach(card => card.addEventListener('click', flipCard));
-}
+
 // gör gameOver sidan synlig
 function gameOver(){
 
@@ -122,11 +126,10 @@ const pointerEnd = document.querySelector(".pointsEnd");
 
 
 // startar spelet vid klick på start-knappen
-document.getElementById("replay").addEventListener("click", start);
+document.querySelector("#replay").addEventListener('click', start);
 // timer
 
 
-document.getElementById('replay').addEventListener('click', lejlaTimer);
 
 let downloadTimer = 0;
 let intervalId = '';

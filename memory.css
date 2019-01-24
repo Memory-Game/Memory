@@ -19,7 +19,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   }
-body {
+body  {
   height: 100vh;
   display: flex;
   background: rgb(14, 150, 59);
@@ -156,7 +156,7 @@ color: #000;
 .rules img {
   margin: 0 auto;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 80px;
 }
 .win {
   transform: rotateY(180deg);
@@ -175,4 +175,14 @@ color: #000;
 @keyframes fade {
   100%{opacity: 0;}
   0%{opacity: 1;}
+}
+@media (max-width: 769px) {
+html {
+  width: 40%;
+}
+
+.memoryCard{
+    width: calc(33.333% - 10px);
+    height: calc(25% - 10px);
+  }
 }
