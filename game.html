@@ -16,30 +16,39 @@
                         <div>
 
                             <h1 class="titel">MEMORY</h1>
-                            <span class="supTxtL">MOVES:  <span class="move"> 0</span> </span>
+                            <span class="supTxtL">FÖRSÖK:  <span class="move"> 0</span> </span>
                             <span id="timer">
                                 <progress value="0" max="30" id="progressBar"></progress>
                                 <!--v<button id="start-btn">Start</button>
                                 <button id="stop-btn">Stop</button> -->
                             </span> 
-                            <span class="supTxtH">POINTS:<span class="points"> 0</span>  </span> 
+                            <span class="supTxtH">POÄNG:<span class="points"> 0</span>  </span> 
                         </div>
                      
                         <section class="memory-game">
                         <script src="./cards.js"></script> 
     
         <div class="hoverGameOff" >
-                <button id="replay">Spela</button> 
+                <button id="replay" >Spela</button> 
+                    <a  href="rules.html" id="rules-btn">    <button id="replay">Regler
+                        </button> </a>  
                 <div class="rules">
-                    <h3>Regler</h3>
-                    <br>
-                    <ul>
-                        <li>Kör på!</li>
-                        <li>Matcha o vinn!</li>
-                    </ul>
+                   <img src="./img/farmer_hoe_garden_hb.gif" alt="farmer" srcset="">
                 </div>
             </div>
-  
+            <div class="game">
+                    <a  href="game.html" id="rules-btn">    <button id="replay">Spela Igen?
+                        </button> </a>  
+                    <div class="rules">
+                        <h3>Spelet slut!</h3>
+                        <br>
+                        <ul>
+                            <li>Du fick: <span class="pointsEnd">0</span> poäng.</li>
+                            <li>Och använde: <span class="moveEnd">0</span> försök.</li>
+                        </ul>
+                        <img src="./img/endGif.gif" alt="end_git">
+                    </div>
+                </div>
      
             </section>
         </div>

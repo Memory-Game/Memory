@@ -6,6 +6,7 @@ const cards = document.querySelectorAll('.memoryCard');
 const counter = document.querySelector(".move");
 const pointer = document.querySelector(".points");
 const hover = document.querySelector(".hoverGameOff");
+const afterGame = document.querySelector(".game");
 
 var hasFlippedCard = false;
 var lockBoard = false;
@@ -29,9 +30,8 @@ function start(){
     lockBoard = false;
     timeleft = 30;
   hover.classList.toggle('gameOn');
-
   // räknar antal klick
-function moves(){
+  function moves(){
     move++;
     counter.innerHTML = move;
   }
@@ -72,7 +72,7 @@ function disableCards() {
 // kollar om omgången är klar, startar om (ska ersättas med nåt som visar hur det gick, och val om att starta om)
 if (points == 6){
     setTimeout(() => {
-    start();
+    gameOver();
 }, 2500);
 }
   resetBoard();
@@ -108,8 +108,17 @@ function resetBoard() {
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 }
+// gör gameOver sidan synlig
+function gameOver(){
 
+const counterEnd = document.querySelector(".moveEnd");
+const pointerEnd = document.querySelector(".pointsEnd");
 
+  afterGame.classList.add('gameOver');
+  afterGame.classList.remove('game');
+  counterEnd.innerHTML = move;
+  pointerEnd.innerHTML = points;
+}
 
 
 // startar spelet vid klick på start-knappen
@@ -128,7 +137,7 @@ function lejlaTimer () {
     if (timeleft == 0){
       console.log('timuot');
       clearInterval(downloadTimer);
-      start();
+      gameOver();
       clearInterval(intervalId);
     } 
   },1000);
