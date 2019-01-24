@@ -177,12 +177,33 @@ color: #000;
   0%{opacity: 1;}
 }
 @media (max-width: 769px) {
-html {
-  width: 40%;
+  @-ms-viewport{
+    width: 320px;
+  }
+body {
+  width: 100%;
 }
-
+.memory-game{
+  width: 300px;
+  height: 300px;
+}
+.gameOver{
+  width: 300px;
+  height: 300px;
+}
+.hoverGameOff{
+  width: 300px;
+  height: 300px;
+}
 .memoryCard{
     width: calc(33.333% - 10px);
     height: calc(25% - 10px);
+  }
+  .supTxtH, .supTxtL{
+    font-size: 0.8em;
+  }
+  #timer{
+    margin-left: 2.5%;
+    margin-right: 2.5%;
   }
 }
