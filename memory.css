@@ -172,14 +172,17 @@ color: #000;
   transform: rotateY(0deg);
   animation: fade 2s ease forwards;
 }
+
 @keyframes fade {
   100%{opacity: 0;}
   0%{opacity: 1;}
 }
-@media (max-width: 769px) {
-  @-ms-viewport{
-    width: 320px;
-  }
+#progressBar {
+  
+width: 33.3%;
+}
+@media (max-width: 500px) {
+
 body {
   width: 100%;
 }
@@ -202,8 +205,6 @@ body {
   .supTxtH, .supTxtL{
     font-size: 0.8em;
   }
-  #timer{
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-  }
+
+
 }
