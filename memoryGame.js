@@ -27,15 +27,15 @@ function start(){
         kort.classList.remove("flip");
         kort.classList.remove("match");
     });
-    counter.innerHTML = move = 0;
-    pointer.innerHTML = points = 0;
-    hasFlippedCard = false;
-    secondCard = null;
-    firstCard = null;
-    lockBoard = false;
-    timeleft = 30;
-    hover.classList.toggle('gameOn');
-    lejlaTimer();
+        counter.innerHTML = move = 0;
+        pointer.innerHTML = points = 0;
+        hasFlippedCard = false;
+        secondCard = null;
+        firstCard = null;
+        lockBoard = false;
+        timeleft = 30;
+        hover.classList.toggle('gameOn');
+        lejlaTimer();
         
   }
   // räknar antal klick och sätter igång timern vid första vändning
@@ -130,16 +130,12 @@ document.getElementById("replay").addEventListener("click", start);
 
 
 // timer
-
-
-
 function lejlaTimer () {
   intervalId = setInterval(function(){
     document.getElementById("progressBar").value = 30 - --timeleft;
     if (timeleft == 0|| points == 6 ){
       let tid = 30 -  timeleft - 1;
         if (timeleft > 0) {
-
           seconds.innerHTML=tid;
         } else
        { 
@@ -149,9 +145,7 @@ function lejlaTimer () {
         gameOver();
         clearInterval(intervalId);
       } 
-      
     }, 1000);
-    
   }
 });
 
