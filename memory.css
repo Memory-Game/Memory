@@ -170,7 +170,7 @@ color: #000;
   background:#fff;
 }
 #progressBar {
-  width: 33.3%;
+  width: 30%;
   }
 .match {
   transform: rotateY(0deg);

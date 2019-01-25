@@ -10,7 +10,7 @@ const afterGame = document.querySelector(".game");
 const counterEnd = document.querySelector(".moveEnd");
 const pointerEnd = document.querySelector(".pointsEnd");
 const seconds = document.querySelector('.seconds');
-const needMoreTime = document.querySelector('.needMoreTime');
+const timeIsOut = document.querySelector('.timeIsOut');
 
 var hasFlippedCard = false;
 var lockBoard = false;
@@ -23,76 +23,69 @@ var intervalId = '';
 
 // starta/ starta om 0-ställer/ sartar timer  
 function start(){
-    cards.forEach(kort => {
-        kort.classList.remove("flip");
-        kort.classList.remove("match");
-    });
-        counter.innerHTML = move = 0;
-        pointer.innerHTML = points = 0;
-        hasFlippedCard = false;
-        secondCard = null;
-        firstCard = null;
-        lockBoard = false;
-        timeleft = 30;
-        hover.classList.toggle('gameOn');
-        lejlaTimer();
-        
+  cards.forEach(kort => {
+    kort.classList.remove("flip");
+    kort.classList.remove("match");
+  });
+  counter.innerHTML = move = 0;
+  pointer.innerHTML = points = 0;
+  hasFlippedCard = false;
+  secondCard = null;
+  firstCard = null;
+  lockBoard = false;
+  timeleft = 30;
+  hover.classList.toggle('gameOn');
+  lejlaTimer();
+  
+}
+// räknar antal klick och sätter igång timern vid första vändning
+function moves(){
+  move++;
+  counter.innerHTML = move;
+}
+// lägger till css-flip vid klick
+function flipCard() {
+  if (lockBoard) return;
+  if (this === firstCard) return;
+  
+  this.classList.add('flip');
+  moves();
+  if (!hasFlippedCard) {
+    hasFlippedCard = true;
+    firstCard = this;
+    return;
   }
-  // räknar antal klick och sätter igång timern vid första vändning
-  function moves(){
-    move++;
-    counter.innerHTML = move;
-  }
-  // lägger till css-flip vid klick
-  function flipCard() {
-    if (lockBoard) return;
-    if (this === firstCard) return;
-    
-    this.classList.add('flip');
-    moves();
-    if (!hasFlippedCard) {
-      hasFlippedCard = true;
-      firstCard = this;
-      return;
-    }
-
-    secondCard = this;
-    checkForMatch();
+  secondCard = this;
+  checkForMatch();
 }
 // kollar om dataset matchar, gör dom de tas klick bort från korten med flip aktiv, är det inte match, tas flip bort med 1 sekunds fördröjning. 
 function checkForMatch() {
   let isMatch = firstCard.id === secondCard.id;
-
+  
   isMatch ? ifMatch() : notMatch();
 }
 
 function ifMatch() {
-
-  
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
   points++;
   pointer.innerHTML = points;
-
-
-        firstCard.classList.add('match');
-        secondCard.classList.add('match');
-// kollar om omgången är klar, startar om (ska ersättas med nåt som visar hur det gick, och val om att starta om)
-if (points == 6){
+  firstCard.classList.add('match');
+  secondCard.classList.add('match');
+  // kollar om omgången är klar, startar om (ska ersättas med nåt som visar hur det gick, och val om att starta om)
+  if (points == 6){
     setTimeout(() => {
-    gameOver();
-}, 2500);
-}
+      gameOver();
+    }, 2500);
+  }
   resetBoard();
 }
 // om ej match, tar bort css klass flip. så korten vänds tillbaka.
 function notMatch() {
   lockBoard = true;
-
   setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
-
     resetBoard();
   }, 1000);
 }
@@ -116,6 +109,10 @@ function resetBoard() {
 
 cards.forEach(card => card.addEventListener('click', flipCard));
 
+
+// startar spelet vid klick på start-knappen
+document.getElementById("replay").addEventListener("click", start);
+
 // gör gameOver sidan synlig
 function gameOver(){
   afterGame.classList.add('gameOver');
@@ -125,21 +122,17 @@ function gameOver(){
 }
 
 
-// startar spelet vid klick på start-knappen
-document.getElementById("replay").addEventListener("click", start);
-
-
 // timer
 function lejlaTimer () {
   intervalId = setInterval(function(){
     document.getElementById("progressBar").value = 30 - --timeleft;
     if (timeleft == 0|| points == 6 ){
       let tid = 30 -  timeleft - 1;
-        if (timeleft > 0) {
-          seconds.innerHTML=tid;
-        } else
+      if (timeleft > 0) {
+        seconds.innerHTML=tid;
+      } else
        { 
-         needMoreTime.innerHTML = '';
+        timeIsOut.innerHTML = '';
         }
         clearInterval(downloadTimer);
         gameOver();
