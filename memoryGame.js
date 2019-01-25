@@ -7,6 +7,8 @@ const counter = document.querySelector(".move");
 const pointer = document.querySelector(".points");
 const hover = document.querySelector(".hoverGameOff");
 const afterGame = document.querySelector(".game");
+const counterEnd = document.querySelector(".moveEnd");
+const pointerEnd = document.querySelector(".pointsEnd");
 
 var hasFlippedCard = false;
 var lockBoard = false;
@@ -115,15 +117,11 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 // gör gameOver sidan synlig
 function gameOver(){
 
-const counterEnd = document.querySelector(".moveEnd");
-const pointerEnd = document.querySelector(".pointsEnd");
-const timeLeft = document.querySelector("timeLeft");
 
   afterGame.classList.add('gameOver');
   afterGame.classList.remove('game');
   counterEnd.innerHTML = move;
   pointerEnd.innerHTML = points;
-  /*window.onload = timeLeft.innerHTML = timeLeft; */
 }
 
 
@@ -153,6 +151,3 @@ function lejlaTimer () {
    }
 });
 
-
-
-/*  timeLeft = document.querySelector(‘.timeLeft’); */
