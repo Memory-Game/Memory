@@ -113,19 +113,21 @@ function gameOver(){
 
 const counterEnd = document.querySelector(".moveEnd");
 const pointerEnd = document.querySelector(".pointsEnd");
+const timeLeft = document.querySelector("timeLeft");
 
   afterGame.classList.add('gameOver');
   afterGame.classList.remove('game');
   counterEnd.innerHTML = move;
   pointerEnd.innerHTML = points;
+  /*window.onload = timeLeft.innerHTML = timeLeft; */
 }
 
 
 // startar spelet vid klick på start-knappen
 document.getElementById("replay").addEventListener("click", start);
+
+
 // timer
-
-
 document.getElementById('replay').addEventListener('click', lejlaTimer);
 
 let downloadTimer = 0;
@@ -134,12 +136,20 @@ let intervalId = '';
 function lejlaTimer () {
   intervalId = setInterval(function(){
     document.getElementById("progressBar").value = 30 - --timeleft;
-    if (timeleft == 0){
-      console.log('timuot');
+    if (timeleft == 0|| points == 6 ){
+      var tid = 30 -  timeleft - 1;
+      console.log(tid);
+      seconds = document.querySelector('.seconds');
+      seconds.innerHTML=tid;
       clearInterval(downloadTimer);
       gameOver();
       clearInterval(intervalId);
     } 
-  },1000);
-}
+  }, 1000);
+
+   }
 });
+
+
+
+/*  timeLeft = document.querySelector(‘.timeLeft’); */
