@@ -19,7 +19,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   }
-body {
+body  {
   height: 100vh;
   display: flex;
   background: rgb(14, 150, 59);
@@ -143,7 +143,7 @@ color: #000;
    font-family: 'hay';
    font-size: 2em;
    border-radius: 15px;
-   margin-top: 40px;
+   margin-top: 20px;
   }
 
 
@@ -157,7 +157,7 @@ color: #000;
 .rules img {
   margin: 0 auto;
   width: 100%;
-  margin-top: 80px;
+  margin-top: 30px;
 }
 .win {
   transform: rotateY(180deg);
@@ -173,6 +173,7 @@ color: #000;
   transform: rotateY(0deg);
   animation: fade 2s ease forwards;
 }
+
 @keyframes fade {
   100%{opacity: 0;}
   0%{opacity: 1;}
