@@ -186,7 +186,7 @@ color: #000;
 /* rules */
 
 
-.bodyR{
+.bodyRules{
     background: url(./img/farmer.gif) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -252,5 +252,3 @@ button{
     }
   
   }
-
-

@@ -9,6 +9,8 @@ const hover = document.querySelector(".hoverGameOff");
 const afterGame = document.querySelector(".game");
 const counterEnd = document.querySelector(".moveEnd");
 const pointerEnd = document.querySelector(".pointsEnd");
+const seconds = document.querySelector('.seconds');
+const needMoreTime = document.querySelector('.needMoreTime');
 
 var hasFlippedCard = false;
 var lockBoard = false;
@@ -16,9 +18,10 @@ var firstCard, secondCard;
 var move = 0;
 var points = 0;
 var timeleft;
+var downloadTimer = 0;
+var intervalId = '';
 
-
-// starta/ starta om 0-ställer   
+// starta/ starta om 0-ställer/ sartar timer  
 function start(){
     cards.forEach(kort => {
         kort.classList.remove("flip");
@@ -31,10 +34,9 @@ function start(){
     firstCard = null;
     lockBoard = false;
     timeleft = 30;
-  hover.classList.toggle('gameOn');
-        if (timeleft == 30){
-          lejlaTimer();
-        }
+    hover.classList.toggle('gameOn');
+    lejlaTimer();
+        
   }
   // räknar antal klick och sätter igång timern vid första vändning
   function moves(){
@@ -116,8 +118,6 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
 // gör gameOver sidan synlig
 function gameOver(){
-
-
   afterGame.classList.add('gameOver');
   afterGame.classList.remove('game');
   counterEnd.innerHTML = move;
@@ -132,22 +132,26 @@ document.getElementById("replay").addEventListener("click", start);
 // timer
 
 
-let downloadTimer = 0;
-let intervalId = '';
 
 function lejlaTimer () {
   intervalId = setInterval(function(){
     document.getElementById("progressBar").value = 30 - --timeleft;
     if (timeleft == 0|| points == 6 ){
-      var tid = 30 -  timeleft - 1;
-      seconds = document.querySelector('.seconds');
-      seconds.innerHTML=tid;
-      clearInterval(downloadTimer);
-      gameOver();
-      clearInterval(intervalId);
-    } 
-  }, 1000);
+      let tid = 30 -  timeleft - 1;
+        if (timeleft > 0) {
 
-   }
+          seconds.innerHTML=tid;
+        } else
+       { 
+         needMoreTime.innerHTML = '';
+        }
+        clearInterval(downloadTimer);
+        gameOver();
+        clearInterval(intervalId);
+      } 
+      
+    }, 1000);
+    
+  }
 });
 
