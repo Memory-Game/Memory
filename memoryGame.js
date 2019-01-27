@@ -21,7 +21,7 @@ var timeleft;
 var downloadTimer = 0;
 var intervalId = '';
 
-// starta/ starta om 0-ställer/ sartar timer  
+// starta/ starta om 0-ställer/ startar timer  
 function start(){
   cards.forEach(kort => {
     kort.classList.remove("flip");
@@ -38,7 +38,7 @@ function start(){
   lejlaTimer();
   
 }
-// räknar antal klick och sätter igång timern vid första vändning
+// räknar antal klick 
 function moves(){
   move++;
   counter.innerHTML = move;
@@ -58,7 +58,7 @@ function flipCard() {
   secondCard = this;
   checkForMatch();
 }
-// kollar om dataset matchar, gör dom de tas klick bort från korten med flip aktiv, är det inte match, tas flip bort med 1 sekunds fördröjning. 
+// kollar om id matchar, gör dom de tas klick bort från korten med flip aktiv, är det inte match, tas flip bort med 1 sekunds fördröjning. 
 function checkForMatch() {
   let isMatch = firstCard.id === secondCard.id;
   
